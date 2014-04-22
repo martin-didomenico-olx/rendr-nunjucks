@@ -1,0 +1,29 @@
+{
+  "name": "renrd-nunjucks",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "author": {
+    "name": "OLX Mobile Team",
+    "url": "http://www.olx.com"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=0.10"
+  },
+  "config": {
+    "blanket": {
+      "pattern": [
+        "/server/"
+      ],
+      "data-cover-never": [
+        "/node_modules/",
+        "/test/"
+      ]
+    }
+  },
+  "dependencies": {
+    "nunjucks": "1.0.2",
+    "rendr": "martin-didomenico-olx/rendr"
+  }
+}
