@@ -18,7 +18,10 @@ module.exports = function(options) {
                     require(defaultTemplates);
                 }
             }
-            return nunjucks.configure('app/templates');
+            return nunjucks.configure('app/templates', {
+                watch: false,
+                autoescape: true
+            });
         })(require('nunjucks'));
 
         localExports.nunjucks = nunjucks;
