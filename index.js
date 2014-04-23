@@ -19,8 +19,7 @@ module.exports = function(options) {
                 }
             }
             return nunjucks.configure('app/templates', {
-                watch: false,
-                autoescape: true
+                watch: false
             });
         })(require('nunjucks'));
 
