@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(options) {
+module.exports = function() {
     var localExports = {
         init: init
     };
@@ -36,12 +36,20 @@ module.exports = function(options) {
                 throw new Error('getLayout is only available on the server.');
             };
         }
+        localExports.registerExtensions = function(extensions) {
+            extensions = extensions(nunjucks);
+            for (var extension in extensions) {
+                nunjucks.addExtension(extension, new extensions[extension]);
+            }
+        };
+        localExports.registerExtensions(require('./shared/extensions'));
         localExports.registerHelpers = function(helpers) {
             helpers = helpers(nunjucks);
             for (var helper in helpers) {
                 nunjucks.addFilter(helper, helpers[helper]);
             }
         };
+        localExports.registerHelpers(require('./shared/helpers'));
     }
 
     return localExports;
