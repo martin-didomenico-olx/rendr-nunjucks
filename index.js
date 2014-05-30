@@ -1,12 +1,14 @@
 'use strict';
 
+var nunjucks;
+
 module.exports = function() {
     var localExports = {
         init: init
     };
 
     function init(location) {
-        var nunjucks = (function(nunjucks) {
+        nunjucks = nunjucks || (function(nunjucks) {
             var defaultTemplates = 'app/templates/compiled/default/html5/templates';
 
             if (typeof window !== 'undefined') {
