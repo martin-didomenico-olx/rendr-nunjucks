@@ -9,16 +9,8 @@ module.exports = function() {
 
     function init(location) {
         nunjucks = nunjucks || (function(nunjucks) {
-            var defaultTemplates = 'app/templates/compiled/default/html5/templates';
-
             if (typeof window !== 'undefined') {
                 nunjucks = window.nunjucks;
-                try {
-                    require('app/templates/compiled/' + location + '/html5/templates');
-                }
-                catch(err) {
-                    require(defaultTemplates);
-                }
             }
             return nunjucks.configure('app/templates', {
                 watch: false
