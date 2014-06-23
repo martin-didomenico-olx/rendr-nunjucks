@@ -7,7 +7,7 @@ module.exports = function() {
         init: init
     };
 
-    function init(location) {
+    function init() {
         nunjucks = nunjucks || (function(nunjucks) {
             if (typeof window !== 'undefined') {
                 nunjucks = window.nunjucks;
