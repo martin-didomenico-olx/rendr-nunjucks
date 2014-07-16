@@ -12,7 +12,7 @@
     "node": ">=0.10"
   },
   "dependencies": {
-    "nunjucks": "1.0.2",
+    "nunjucks": "1.0.5",
     "rendr": "0.5.0"
   }
 }
