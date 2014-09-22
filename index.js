@@ -28,7 +28,9 @@ else {
 localExports.registerExtensions = function(extensions) {
     extensions = extensions(nunjucks);
     for (var extension in extensions) {
-        nunjucks.addExtension(extension, new extensions[extension]);
+        if (!nunjucks.extensions[extension]) {
+            nunjucks.addExtension(extension, new extensions[extension]);
+        }
     }
 };
 localExports.registerExtensions(require('./shared/extensions'));
@@ -36,7 +38,9 @@ localExports.registerExtensions(require('./shared/extensions'));
 localExports.registerHelpers = function(helpers) {
     helpers = helpers(nunjucks);
     for (var helper in helpers) {
-        nunjucks.addFilter(helper, helpers[helper]);
+        if (!nunjucks.filters[helper]) {
+            nunjucks.addFilter(helper, helpers[helper]);
+        }
     }
 };
 localExports.registerHelpers(require('./shared/helpers'));
