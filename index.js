@@ -9,8 +9,7 @@ if (!isServer) {
     nunjucks = window.nunjucks;
 }
 nunjucks = nunjucks.configure('app/templates', {
-    watch: false,
-    autoescape: false
+    watch: false
 });
 
 localExports.nunjucks = nunjucks;

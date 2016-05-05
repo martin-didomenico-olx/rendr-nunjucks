@@ -1,5 +1,7 @@
 'use strict';
 
+var _ = require('underscore');
+
 module.exports = function(nunjucks) {
     function getProperty(key, context) {
         return context[key] || context['ctx'][key];
